@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MouseManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MouseManager : MonoBehaviour
     public Texture2D targetCursor;
     public Texture2D doorwayCursor;
     public Texture2D combatCursor;
+
+    public EventVector3 onClickEnvironment;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,11 @@ public class MouseManager : MonoBehaviour
                 Cursor.SetCursor(targetCursor, new Vector2(16, 16), CursorMode.Auto);
             }
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                onClickEnvironment.Invoke(hit.point);
+            }
+
 
         }
         else
@@ -44,3 +52,6 @@ public class MouseManager : MonoBehaviour
         }
     }
 }
+
+[System.Serializable]
+public class EventVector3 : UnityEvent<Vector3> { }
