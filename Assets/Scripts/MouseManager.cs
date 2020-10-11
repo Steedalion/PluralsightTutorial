@@ -28,7 +28,7 @@ public class MouseManager : MonoBehaviour
            {
                bool door = false;
                bool item = false;
-               bool enemy = false;
+               //bool enemy = false;
 
                if (hit.collider.gameObject.tag == "Doorway")
                {
