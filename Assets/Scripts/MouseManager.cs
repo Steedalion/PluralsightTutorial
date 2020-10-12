@@ -12,6 +12,7 @@ public class MouseManager : MonoBehaviour
        public Texture2D targetCursor;
        public Texture2D doorwayCursor;
        public Texture2D combatCursor;
+    public bool enableDebug = false;
 
        public EventVector3 onClickEnvironment;
           //Start is called before the first frame update
